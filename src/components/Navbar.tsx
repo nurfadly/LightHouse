@@ -18,37 +18,36 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '/services' },
-    { name: 'Work', href: '/work' },
+    { name: 'Portfolio', href: '/work' },
+    { name: 'Service', href: '/services' },
+    { name: 'About Us', href: '/about' },
     { name: 'Process', href: '/process' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
   ];
 
   return (
-    <nav
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-        isScrolled ? 'bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800 py-3' : 'bg-transparent'
-      )}
-    >
-      <div className="max-w-7xl mx-auto flex items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 transition-all duration-500">
+      <div className={cn(
+        "max-w-5xl mx-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 border",
+        isScrolled 
+          ? "bg-neutral-950/80 backdrop-blur-xl border-neutral-800 shadow-2xl py-2.5" 
+          : "bg-neutral-900/40 backdrop-blur-md border-neutral-800/50"
+      )}>
         {/* Left: Logo */}
         <div className="flex-1 flex justify-start">
           <Link to="/" className="flex items-center gap-2 group">
-            <Compass className="w-8 h-8 text-brand group-hover:scale-110 transition-transform" />
-            <span className="text-xl font-bold tracking-tighter uppercase font-display italic">Lighthouse</span>
+            <Compass className="w-6 h-6 text-brand transition-transform group-hover:rotate-12" />
+            <span className="text-lg font-bold tracking-tighter uppercase font-display italic">Lighthouse</span>
           </Link>
         </div>
 
         {/* Center: Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 px-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
               className={cn(
-                "text-sm font-medium transition-colors uppercase tracking-widest",
+                "text-[11px] font-medium transition-colors uppercase tracking-[0.15em]",
                 pathname === link.href ? "text-brand" : "text-neutral-400 hover:text-neutral-50"
               )}
             >
@@ -58,21 +57,22 @@ export const Navbar = () => {
         </div>
 
         {/* Right: Action Button & Mobile Toggle */}
-        <div className="flex-1 flex justify-end items-center gap-4">
+        <div className="flex-1 flex justify-end items-center gap-3">
           <Link
             to="/contact"
-            className="hidden md:block bg-neutral-50 text-neutral-950 px-5 py-2 rounded-full text-sm font-bold hover:bg-brand transition-colors uppercase tracking-tight whitespace-nowrap"
+            className="hidden md:block bg-neutral-900 border border-neutral-800 text-neutral-100 px-5 py-2.5 rounded-full text-[10px] font-bold hover:bg-neutral-800 transition-colors uppercase tracking-widest whitespace-nowrap"
           >
-            Start a project
+            Get In Touch
           </Link>
           <button
-            className="md:hidden text-neutral-50"
+            className="md:hidden text-neutral-50 p-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
+
 
       {/* Mobile Menu */}
       <AnimatePresence>

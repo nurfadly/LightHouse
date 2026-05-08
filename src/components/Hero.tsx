@@ -1,78 +1,68 @@
 import { motion } from 'motion/react';
-import { ArrowDownRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-brand/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-neutral-800/30 rounded-full blur-[100px] pointer-events-none" />
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 overflow-hidden pt-20">
+      {/* Background Glows */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-1/3 h-full bg-brand/20 blur-[150px] opacity-40 pointer-events-none" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-1/3 h-full bg-brand/20 blur-[150px] opacity-40 pointer-events-none" />
+      
+      {/* Decorative center glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.05)_0%,transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+      <div className="max-w-5xl mx-auto text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm mb-10"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
+          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">Marketing Consulting Agency</span>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="inline-block py-1 px-3 border border-neutral-800 rounded-full text-[11px] uppercase tracking-[0.2em] text-neutral-400 mb-8">
-            Guiding Brands Through the Digital Mist
-          </span>
-          
-          <h1 className="text-6xl md:text-[8rem] font-display font-black leading-[0.9] tracking-tighter uppercase mb-8 italic">
-            Illuminating <br />
-            <span className="text-brand">Global </span> 
-            Futures.
+          <h1 className="text-5xl md:text-[5.5rem] font-sans font-bold leading-[1.1] tracking-tight mb-8">
+            We Transform Ideas <br />
+            <span className="font-display italic font-light lowercase text-neutral-100">into digital experiences</span>
           </h1>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-end">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-neutral-400 max-w-lg leading-relaxed font-light"
-          >
-            Lighthouse is a boutique marketing consulting agency. We craft precision strategies that pierce through market noise to deliver measurable impact for visionaries.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-end"
-          >
-            <a 
-              href="#work"
-              className="group relative w-32 h-32 rounded-full border border-neutral-700 flex items-center justify-center overflow-hidden hover:border-brand transition-colors"
-            >
-              <div className="absolute inset-0 bg-brand translate-y-full group-hover:translate-y-0 transition-transform duration-500 rounded-full" />
-              <ArrowDownRight className="w-8 h-8 relative z-10 group-hover:text-neutral-950 transition-colors" />
-            </a>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Ticker / Marquee */}
-      <div className="mt-32 py-10 border-t border-b border-neutral-800 overflow-hidden select-none">
-        <motion.div 
-          animate={{ x: [0, -1000] }}
-          transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
-          className="flex whitespace-nowrap gap-12 text-sm font-mono uppercase tracking-widest text-neutral-600"
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-light"
         >
-          {Array(10).fill(null).map((_, i) => (
-            <div key={i} className="flex gap-12 items-center">
-              <span>Strategy First</span>
-              <span className="text-brand opacity-50">•</span>
-              <span>Data Driven</span>
-              <span className="text-brand opacity-50">•</span>
-              <span>Design Led</span>
-              <span className="text-brand opacity-50">•</span>
-              <span>Future Oriented</span>
-              <span className="text-brand opacity-50">•</span>
-            </div>
-          ))}
+          Lighthouse exists to create strategies that feel <span className="text-neutral-200">crafted</span>, not rushed, for <br className="hidden md:block" /> visionary brands who <span className="text-neutral-200">care about impact</span>.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Link 
+            to="/contact" 
+            className="w-full sm:w-auto bg-brand text-neutral-950 px-8 py-4 rounded-full font-bold text-sm hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(255,107,0,0.4)] transition-all duration-300"
+          >
+            Get In Touch
+          </Link>
+          <Link 
+            to="/work" 
+            className="w-full sm:w-auto bg-neutral-900/50 backdrop-blur-md border border-neutral-800 text-neutral-100 px-8 py-4 rounded-full font-bold text-sm hover:border-brand/50 transition-all duration-300"
+          >
+            Our Portfolio
+          </Link>
         </motion.div>
       </div>
     </section>
   );
 };
+
