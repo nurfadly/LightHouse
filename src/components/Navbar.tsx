@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Compass } from 'lucide-react';
+import { Menu, X, Sparkle } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export const Navbar = () => {
@@ -35,7 +35,9 @@ export const Navbar = () => {
         {/* Left: Logo */}
         <div className="flex-1 flex justify-start">
           <Link to="/" className="flex items-center gap-2 group">
-            <Compass className="w-6 h-6 text-brand transition-transform group-hover:rotate-12" />
+            <div className="w-8 h-8 rounded-full bg-brand flex items-center justify-center transition-transform group-hover:rotate-90">
+              <Sparkle className="w-5 h-5 text-white" fill="white" />
+            </div>
             <span className="text-lg font-bold tracking-tighter uppercase font-display italic">Lighthouse</span>
           </Link>
         </div>
