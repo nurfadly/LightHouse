@@ -35,9 +35,12 @@ export const Navbar = () => {
         {/* Left: Logo */}
         <div className="flex-1 flex justify-start">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-full bg-brand flex items-center justify-center transition-transform group-hover:rotate-90">
-              <Sparkle className="w-5 h-5 text-white" fill="white" />
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Lighthouse Logo" 
+              className="w-8 h-8 object-contain transition-transform group-hover:rotate-90 duration-500"
+              referrerPolicy="no-referrer"
+            />
             <span className="text-lg font-bold tracking-tighter uppercase font-display italic">Lighthouse</span>
           </Link>
         </div>

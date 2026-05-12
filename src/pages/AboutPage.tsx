@@ -71,9 +71,11 @@ export default function AboutPage() {
           <h2 className="text-4xl font-display font-medium mb-16 text-center italic tracking-tight">Our Core Values</h2>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { t: 'Radical Clarity', d: 'We cut through the jargon to deliver actionable insights and honest advice.' },
-              { t: 'Strategic Precision', d: 'Every recommendation is backed by data and aligned with your long-term goals.' },
-              { t: 'Creative Integrity', d: 'We believe good design is good business. We never compromise on aesthetics or function.' }
+              { t: 'Clarity First', d: 'Kami mengutamakan kejelasan di atas kompleksitas agar setiap langkah memiliki arah yang pasti.' },
+              { t: 'Guide, not just execute', d: 'Kami tidak hanya mengerjakan, tetapi mengarahkan setiap keputusan menuju hasil yang lebih baik.' },
+              { t: 'Honest & Transparent', d: 'Kami terbuka terhadap proses dan hasil, termasuk ketika performa belum sesuai harapan.' },
+              { t: 'Evolve Constantly', d: 'Kami terus beradaptasi dengan perubahan agar tetap relevan dan efektif.' },
+              { t: 'Purpose in Every Move', d: 'Setiap strategi dan aksi memiliki alasan yang jelas, bukan sekadar mengikuti tren.' }
             ].map((v, i) => (
               <div key={i} className="p-8 border border-neutral-800 rounded-2xl hover:border-brand/30 transition-colors">
                 <h3 className="text-xl font-display font-medium mb-4">{v.t}</h3>
@@ -93,7 +95,7 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
             {[
-              { n: 'Alex Morgan', r: 'CEO & Strategy Lead', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop' },
+              { n: 'Nur Fadly', r: 'CEO & Strategy Lead', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop' },
               { n: 'Sarah Chen', r: 'Design Director', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2574&auto=format&fit=crop' },
               { n: 'Marcus Thorne', r: 'Head of Growth', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2570&auto=format&fit=crop' },
               { n: 'Elena Rodriguez', r: 'Analytics Lead', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop' },

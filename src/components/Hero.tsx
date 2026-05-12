@@ -28,8 +28,8 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <h1 className="text-5xl md:text-[5.5rem] font-sans font-bold leading-[1.1] tracking-tight mb-8">
-            We Transform Ideas <br />
-            <span className="font-display italic font-light lowercase text-neutral-100">into digital experiences</span>
+            Guiding your <br />
+            <span className="font-display italic font-light lowercase text-neutral-100">Growth</span>
           </h1>
         </motion.div>
 
@@ -39,7 +39,7 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-light"
         >
-          Lighthouse exists to create strategies that feel <span className="text-neutral-200">crafted</span>, not rushed, for <br className="hidden md:block" /> visionary brands who <span className="text-neutral-200">care about impact</span>.
+          Spark of the light even in the dark
         </motion.p>
 
         <motion.div

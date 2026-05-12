@@ -10,9 +10,12 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center transition-transform group-hover:rotate-90 duration-500">
-                <Sparkle className="w-6 h-6 text-white" fill="white" />
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Lighthouse Logo" 
+                className="w-10 h-10 object-contain transition-transform group-hover:rotate-90 duration-500"
+                referrerPolicy="no-referrer"
+              />
               <span className="text-xl font-bold tracking-tighter uppercase font-display italic">Lighthouse</span>
             </Link>
             <p className="text-neutral-500 max-w-sm text-sm leading-relaxed mb-8">
